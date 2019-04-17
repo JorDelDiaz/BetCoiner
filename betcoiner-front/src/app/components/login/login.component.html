@@ -1,0 +1,38 @@
+<!-- Card -->
+<section>
+    <div class="row col-md-6 mx-auto mt-5">
+        <div class="card card-image">
+            <div class="text-white text-center d-flex align-items-center py-5 px-4">
+                <div class="md-form">
+                    <h3 class="card-title pt-2"><i class="fa fa-bitcoin"></i><strong> BetCoiner</strong></h3>
+                    <h5 class="card-title pt-2"><strong>Log in</strong></h5>
+                    <h6 class="text-center">Introduce tus credenciales</h6>
+
+                    <div class="md-form">
+                        <i class="fa fa-user prefix icons"></i>
+                        <input type="text" [(ngModel)]="inputUsername" id="username" class="form-control" autocomplete="off" mdbInputDirective>
+                        <label for="username">Usuario</label>
+                    </div>
+
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix icons"></i>
+                        <input type="password" [(ngModel)]="inputPassword" id="password" class="form-control" autocomplete="off" mdbInputDirective>
+                        <label for="password">Contraseña</label>
+                    </div>
+                    <div class="text-center">
+                        <button mdbBtn class="betcoiner-button" (click)="validateLogin()" mdbWavesEffect>
+                            <i class="fa fa-sign-in"></i> Acceder
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div [ngClass]="{'dialog-fadeIn':message,'dialog-fadeOut':!message}" tabindex="-1" role="dialog" [ngStyle]="{'background-color':login ? '#00C851' : '#FF3547' }" role="document" class="modal-content">
+            <div class="modal-body row justify-content-center align-items-center">
+                <div>
+                    <p>{{textMessage}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

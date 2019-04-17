@@ -1,0 +1,149 @@
+html {
+    background: url(assets/img/betcoiner_background.png) no-repeat center center fixed;
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    -o-background-size: auto;
+    background-size: auto;
+}
+
+body {
+    background: transparent;
+}
+
+p {
+    margin-top: unset;
+    margin-bottom: unset;
+}
+
+.row {
+    margin-left: unset;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: unset;
+}
+
+.mx-auto {
+    margin-bottom: 48px;
+}
+
+.card {
+    width: 100%;
+    align-items: center;
+    background-color: #FFD900;
+}
+
+.icons {
+    color: #F39800;
+}
+
+.counter-success:focus {
+    border-bottom: 1px solid #F39800 !important;
+    box-shadow: 0 1px 0 0 #F39800 !important;
+}
+
+.counter-success {
+    border-bottom: 1px solid #FFFFFF !important;
+    box-shadow: 0 1px 0 0 transparent !important;
+}
+
+.text-success {
+    visibility: hidden !important;
+}
+
+.dialog-fadeIn {
+    color: #FFFFFF;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 2000ms;
+    display: inline;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-right: 16px;
+}
+
+.dialog-fadeOut {
+    color: #FFFFFF;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 2000ms, opacity 2000ms;
+    display: inline;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-right: 16px;
+}
+
+.md-form label.active {
+    color: #FFFFFF;
+}
+
+.form-control {
+    color: #FFFFFF;
+}
+
+.md-form .prefix {
+    top: 0.80rem;
+    left: 0;
+    font-size: 1.75rem;
+}
+
+.md-form .prefix.active {
+    top: 0.80rem;
+    left: 0;
+    font-size: 1.75rem;
+    color: #F39800;
+}
+
+.md-form label {
+    color: #FFFFFF;
+}
+
+.betcoiner-button {
+    background-color: #F39800;
+    text-transform: inherit;
+    padding: .4rem 1.5rem;
+}
+
+.md-form input[type=text],
+.md-form input[type=password],
+.md-form input[type=email],
+.md-form input[type=url],
+.md-form input[type=time],
+.md-form input[type=date],
+.md-form input[type=datetime-local],
+.md-form input[type=tel],
+.md-form input[type=number],
+.md-form input[type=search-md],
+.md-form input[type=search],
+.md-form textarea.md-textarea {
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.md-form input[type=text]:focus:not([readonly]),
+.md-form input[type=password]:focus:not([readonly]),
+.md-form input[type=email]:focus:not([readonly]),
+.md-form input[type=url]:focus:not([readonly]),
+.md-form input[type=time]:focus:not([readonly]),
+.md-form input[type=date]:focus:not([readonly]),
+.md-form input[type=datetime-local]:focus:not([readonly]),
+.md-form input[type=tel]:focus:not([readonly]),
+.md-form input[type=number]:focus:not([readonly]),
+.md-form input[type=search-md]:focus:not([readonly]),
+.md-form input[type=search]:focus:not([readonly]),
+.md-form textarea.md-textarea:focus:not([readonly]) {
+    color: #F39800;
+    box-shadow: 0 1px 0 0 #F39800;
+    border-bottom: 1px solid #F39800;
+    &:focus:not([readonly]) {
+        border-color: #F39800;
+        +label {
+            color: #F39800;
+        }
+    }
+}
