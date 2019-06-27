@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,13 +18,13 @@ export class CoinService {
         localStorage.setItem('role', result.authorities[0].authority);
 
         if (result.authorities[0].authority === 'ROLE_ADMIN') {
+          // Is admin
         } else {
+          // Isn't admin
         }
-        console.log(true);
         return true;
       },
       error => {
-        console.log(false);
         return false;
       }
     );

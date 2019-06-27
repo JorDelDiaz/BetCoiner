@@ -1,6 +1,7 @@
 import { CoinService } from './../../services/coin.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { async } from 'q';
 
 @Component({
   selector: 'app-login',
@@ -27,10 +28,10 @@ export class LoginComponent implements OnInit {
     this.inputPassword = '';
   }
 
-  validateLogin(): void {
+  async validateLogin(): Promise<void> {
     this.message = true;
     this.user = '{"username" : "' + this.inputUsername + '", "password" : "' + this.inputPassword + '"}';
-    if (this.clientService.restCheckUserLogin(JSON.parse(this.user))) {
+    if (await this.clientService.restCheckUserLogin(JSON.parse(this.user))) {
       this.login = true;
       this.textMessage = '¡Bienvenid@ a BetCoiner!';
     } else {
