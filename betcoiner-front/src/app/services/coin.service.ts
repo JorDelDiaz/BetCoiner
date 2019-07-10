@@ -1,33 +1,41 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoinService {
 
+  isAdmin: boolean;
+
   constructor(private http: HttpClient, private router: Router) { }
 
   private remoteUrl = 'http://localhost:8080';
-  restCheckUserLogin(user: any): boolean {
-    this.http.post(this.remoteUrl + '/api/auth/signin', user).subscribe(
+
+  restCheckUserLogin(user: any): Promise<boolean> {
+    return this.http.post(this.remoteUrl + '/api/auth/signin', user).toPromise().then(
       (result: any) => {
+
         localStorage.setItem('token', result.accessToken);
         localStorage.setItem('role', result.authorities[0].authority);
 
         if (result.authorities[0].authority === 'ROLE_ADMIN') {
-          // Is admin
+          this.isAdmin = true;
         } else {
-          // Isn't admin
+          this.isAdmin = false;
         }
         return true;
       },
       error => {
+        this.isAdmin = false;
         return false;
       }
     );
-    return null;
   }
+
+  loginOk() {
+    this.router.navigateByUrl('dashboard');
+  }
+
 }

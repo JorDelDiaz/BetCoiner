@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
-import { BackgroundComponent } from './components/background/background.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -16,8 +15,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     NavigationComponent,
     DashboardComponent,
-    LoginComponent,
-    BackgroundComponent
+    LoginComponent
   ],
   imports: [
     FormsModule,

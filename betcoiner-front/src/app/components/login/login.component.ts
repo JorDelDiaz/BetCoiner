@@ -1,7 +1,6 @@
 import { CoinService } from './../../services/coin.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { async } from 'q';
 
 @Component({
   selector: 'app-login',
@@ -21,8 +20,6 @@ export class LoginComponent implements OnInit {
   textMessage: string;
 
   ngOnInit() {
-    this.message = false;
-    this.login = false;
     this.textMessage = '';
     this.inputUsername = '';
     this.inputPassword = '';
@@ -34,6 +31,7 @@ export class LoginComponent implements OnInit {
     if (await this.clientService.restCheckUserLogin(JSON.parse(this.user))) {
       this.login = true;
       this.textMessage = '¡Bienvenid@ a BetCoiner!';
+      this.clientService.loginOk();
     } else {
       this.login = false;
       this.textMessage = 'Usuario o contraseña inválidos';

@@ -110,6 +110,29 @@ p {
     padding: .4rem 1.5rem;
 }
 
+.navbar {
+    background-color: #FFD900;
+}
+
+.dropdown-menu {
+    width: 100%;
+}
+
+.dropdown .dropdown-menu.dropdown-primary .dropdown-item:active,
+.dropdown .dropdown-menu.dropdown-primary .dropdown-item:hover {
+    width: 100%;
+    background-color: #F39800 !important;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+    border-radius: .125rem;
+}
+
+.dropdown .dropdown-menu {
+    padding: .5rem;
+    margin-left: 0;
+    font-size: .9rem;
+}
+
 .md-form input[type=text],
 .md-form input[type=password],
 .md-form input[type=email],

@@ -1,3 +1,64 @@
-<p>
-  navigation works!
-</p>
+<header class="h-100">
+    <mdb-navbar SideClass="navbar navbar-expand-xl navbar-dark" [containerInside]="true">
+        <mdb-navbar-brand>
+            <a class="logo navbar-brand" routerLink="/dashboard">
+                <img width="72" height="36">
+            </a>
+        </mdb-navbar-brand>
+        <links *ngIf="isAdmin; else userBlock;">
+            <ul class="navbar-nav navbar-center-element mr-auto">
+                <li class="nav-item waves-light">
+                    <button mdbBtn class="betcoiner-button" type="button" mdbWavesEffect>
+                    <i class="fa fa-bar-chart"></i> Valores de mercado
+                </button>
+                </li>
+                <li class="nav-item waves-light">
+                    <button mdbBtn class="betcoiner-button" type="button" mdbWavesEffect>
+                    <i class="fa fa-plus-circle"></i> More...
+                  </button>
+                </li>
+                <li class="nav-item waves-light">
+                    <button mdbBtn class="betcoiner-button" type="button" mdbWavesEffect>
+                    <i class="fa fa-plus-circle"></i> And more...
+                  </button>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-center-element ml-auto">
+                <button mdbBtn class="betcoiner-button" type="button" mdbWavesEffect>
+                      <i class="fa fa-upload"></i> Cargar vuelos
+                  </button>
+                <div class="dropdown" mdbDropdown>
+                    <button mdbDropdownToggle mdbBtn class="betcoiner-button dropdown-toggle waves-light" mdbWavesEffect>
+                    <i class="fa fa-user-circle"></i> Perfil
+                  </button>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+                        <a class="dropdown-item" type="button">
+                            <i class="fa fa-sign-out"></i> Cerrar sesión
+                        </a>
+                    </div>
+                </div>
+            </ul>
+        </links>
+        <ng-template #userBlock>
+            <links>
+                <ul class="navbar-nav navbar-center-element mr-auto">
+                    <li class="nav-item waves-light">
+                        <button mdbBtn class="betcoiner-button" type="button" mdbWavesEffect>
+                          <i class="fa fa-bar-chart"></i> Valores de mercado
+                      </button>
+                    </li>
+                </ul>
+                <div class="dropdown" mdbDropdown>
+                    <button mdbDropdownToggle mdbBtn class="betcoiner-button dropdown-toggle waves-light" mdbWavesEffect>
+                    <i class="fa fa-user-circle"></i> Perfil
+                  </button>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+                        <a class="dropdown-item" type="button">
+                            <i class="fa fa-sign-out"></i> Cerrar sesión
+                        </a>
+                    </div>
+                </div>
+            </links>
+        </ng-template>
+    </mdb-navbar>
+</header>
